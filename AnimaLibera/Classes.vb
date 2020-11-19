@@ -1,33 +1,26 @@
 ﻿Public Class Bullet
-    Inherits PictureBox
     Public StartingPos As Point
     Protected Color As Color
     Protected Damage As Single
     Protected Velocity As Single
-    Protected VelocityX As Single
-    Protected VelocityY As Single
-    Protected Vel_Angle As Double
+    Protected VelAngle As Double
     Protected Accel As Single
-    Protected Accel_Angle As Double
-    Protected Elapsed_Time As Stopwatch
+    Protected AccelAngle As Double
+    Protected ElapsedTime As Stopwatch
     Protected TimeElapsed As Double
-    Public Sub New(ByVal StartingPos As Point, ByVal Color As Color, ByVal Damage As Single, ByVal Velocity As Single, ByVal Vel_Angle As Double, ByVal Accel As Single, ByVal Accel_Angle As Single)
-        Location = New Point(StartingPos.X, StartingPos.Y)
+    Public Sub New(ByVal StartingPos As Point, ByVal Damage As Single, ByVal Velocity As Single, ByVal Vel_Angle As Double, ByVal Accel As Single, ByVal Accel_Angle As Single)
         Me.StartingPos = StartingPos
-        Width = 10
-        Height = 10
-        BackColor = Color
         Me.Damage = Damage
         Me.Velocity = Velocity
-        Me.Vel_Angle = Vel_Angle
+        VelAngle = Vel_Angle
         Me.Accel = Accel
-        Me.Accel_Angle = Accel_Angle
-        Elapsed_Time = Stopwatch.StartNew()
+        AccelAngle = Accel_Angle
+        ElapsedTime = Stopwatch.StartNew()
     End Sub
     Public Function Position()
-        Dim TimeElapsed = Elapsed_Time.ElapsedMilliseconds()
-        Dim V_Distance = (Velocity * Math.Cos(Vel_Angle) * TimeElapsed) + 1 / 2 * Accel * Math.Cos(Accel_Angle) * TimeElapsed ^ 2
-        Dim X_Distance = (Velocity * Math.Sin(Vel_Angle) * TimeElapsed) + 1 / 2 * Accel * Math.Sin(Accel_Angle) * TimeElapsed ^ 2
+        Dim TimeElapsed = ElapsedTime.ElapsedMilliseconds()
+        Dim V_Distance = (Velocity * Math.Cos(VelAngle) * TimeElapsed) + 1 / 2 * Accel * Math.Cos(AccelAngle) * TimeElapsed ^ 2
+        Dim X_Distance = (Velocity * Math.Sin(VelAngle) * TimeElapsed) + 1 / 2 * Accel * Math.Sin(AccelAngle) * TimeElapsed ^ 2
         Return New Point(StartingPos.X + X_Distance, StartingPos.Y + V_Distance)
     End Function
 End Class

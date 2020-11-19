@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property background() As System.Drawing.Bitmap
+        Friend ReadOnly Property Flower() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Flower", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -73,9 +73,19 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Th06ReimuBackSprite() As System.Drawing.Bitmap
+        Friend ReadOnly Property LowResBackground() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Th06ReimuBackSprite", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("LowResBackground", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property RegularTaiga() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("RegularTaiga", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
