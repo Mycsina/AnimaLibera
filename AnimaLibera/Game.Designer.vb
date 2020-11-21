@@ -30,7 +30,7 @@ Partial Class Game
         'RunningTime
         '
         Me.RunningTime.Enabled = True
-        Me.RunningTime.Interval = 15
+        Me.RunningTime.Interval = 10
         '
         'ShootingCD
         '

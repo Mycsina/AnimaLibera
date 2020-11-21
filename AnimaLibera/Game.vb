@@ -6,28 +6,38 @@
             Return cp
         End Get
     End Property
-    Protected BoolUp As Boolean = False
-    Protected BoolDown As Boolean = False
-    Protected BoolLeft As Boolean = False
-    Protected BoolRight As Boolean = False
-    Protected BoolShift As Boolean = False
-    Protected BoolZ As Boolean = False
-    Protected Position = New Point(560, 420)
+    Protected BoolUp = False
+    Protected BoolDown = False
+    Protected BoolLeft = False
+    Protected BoolRight = False
+    Protected BoolShift = False
+    Protected BoolZ = False
     Protected Bullets = New List(Of Bullet)
     Protected BulletsDummy = New List(Of Bullet)
+    Protected Enemies = New List(Of Enemy)
+    Protected EnemiesDummy = New List(Of Enemy)
     Protected Character = New Rectangle(560, 420, 60, 90)
     Protected Overloads Overrides Sub OnPaint(ByVal e As PaintEventArgs)
         Dim Backbuffer = New Rectangle(0, 0, Width, Height)
-        Dim BulletSize As Size = New Size(20, 20)
+        Dim BulletSize = New Size(20, 20)
+        Dim EnemySize = New Size(20, 20)
         Dim g As Graphics = e.Graphics
-        Dim Background As Image = My.Resources.ResourceManager.GetObject("LowResBackground")
-        Dim CharImage As Image = My.Resources.ResourceManager.GetObject("RegularTaiga")
-        Dim BulletImage As Image = My.Resources.ResourceManager.GetObject("Flower")
+        Dim Background As Image = My.Resources.LowResBackground
+        Dim CharImage As Image = My.Resources.RegularTaiga
+        Dim BulletImage As Image = My.Resources.Flower
+        Dim EnemyImage As Image = My.Resources.Reimu
         g.DrawImage(Background, Backbuffer)
         g.DrawImage(CharImage, Character)
+        If Enemies IsNot Nothing Then
+            For Each Enemy In Enemies
+                If TypeName(Enemy.Position()) = "Point" Then
+                    g.DrawImage(EnemyImage, New Rectangle(Enemy.Position(), EnemySize))
+                End If
+            Next
+        End If
         If Bullets IsNot Nothing Then
-            For Each bullet In Bullets
-                g.DrawImage(BulletImage, New Rectangle(bullet.Position(), BulletSize))
+            For Each Bullet In Bullets
+                g.DrawImage(BulletImage, New Rectangle(Bullet.Position(), BulletSize))
             Next
         End If
     End Sub
@@ -75,11 +85,9 @@
         If Not Character.IntersectsWith(New Rectangle(0, 0, Width, 0)) Then
             If BoolUp Then
                 If BoolShift Then
-                    Position = New Point(Character.Location.X, Character.Location.Y - 5)
                     Character.Y -= 5
                     Invalidate()
                 Else
-                    Position = New Point(Character.Location.X, Character.Location.Y - 8)
                     Character.Y -= 8
                     Invalidate()
                 End If
@@ -88,11 +96,9 @@
         If Not Character.IntersectsWith(New Rectangle(0, Height, Width, 0)) Then
             If BoolDown Then
                 If BoolShift Then
-                    Position = New Point(Position.X, Position.Y + 5)
                     Character.Y += 5
                     Invalidate()
                 Else
-                    Position = New Point(Position.X, Position.Y + 8)
                     Character.Y += 8
                     Invalidate()
                 End If
@@ -101,11 +107,9 @@
         If Not Character.IntersectsWith(New Rectangle(0, 0, 0, Height)) Then
             If BoolLeft Then
                 If BoolShift Then
-                    Position = New Point(Position.X - 5, Position.Y)
                     Character.X -= 5
                     Invalidate()
                 Else
-                    Position = New Point(Position.X - 8, Position.Y)
                     Character.X -= 8
                     Invalidate()
                 End If
@@ -114,35 +118,55 @@
         If Not Character.IntersectsWith(New Rectangle(Width, 0, 0, Height)) Then
             If BoolRight Then
                 If BoolShift Then
-                    Position = New Point(Position.X + 5, Position.Y)
                     Character.X += 5
                     Invalidate()
                 Else
-                    Position = New Point(Position.X + 8, Position.Y)
                     Character.X += 8
                     Invalidate()
                 End If
             End If
         End If
+        If Enemies IsNot Nothing Then
+            For Each Enemy In Enemies
+                Enemy.Position()
+                If TypeName(Enemy.Position()) = "Point" Then
+                    Invalidate()
+                Else
+                    EnemiesDummy.Add(Enemy)
+                End If
+            Next
+            If EnemiesDummy IsNot Nothing Then
+                For Each Enemy In EnemiesDummy
+                    Enemies.Remove(Enemy)
+                Next
+                EnemiesDummy = New List(Of Enemy)
+            End If
+        End If
         If Bullets IsNot Nothing Then
-            For Each bullet In Bullets
-                If bullet.StartingPos.Y < -5 Or bullet.StartingPos.Y > Size.Height Or bullet.StartingPos.X > Size.Width Or bullet.StartingPos.X < -5 Then
-                    BulletsDummy.Add(bullet)
+            For Each Bullet In Bullets
+                Bullet.Position()
+                If Bullet.CurrentPos.Y < -5 OrElse Bullet.CurrentPos.Y > Size.Height OrElse Bullet.CurrentPos.X > Size.Width OrElse Bullet.CurrentPos.X < -5 Then
+                    BulletsDummy.Add(Bullet)
                 Else
                     Invalidate()
                 End If
             Next
             If BulletsDummy IsNot Nothing Then
-                For Each bullet In BulletsDummy
-                    Bullets.Remove(bullet)
+                For Each Bullet In BulletsDummy
+                    Bullets.Remove(Bullet)
                 Next
                 BulletsDummy = New List(Of Bullet)
             End If
         End If
     End Sub
     Protected Sub Shooting(sender As Object, e As EventArgs) Handles ShootingCD.Tick
+        Dim inputs = {New Point(50, 50), New Point(450, 450)}
+        Dim traj = New List(Of Point)(inputs)
         If BoolZ Then
-            Bullets.Add(New Bullet(New Point(Character.Location.X + 45, Character.Location.Y + 35), 10, 0.1, -Math.PI, 0.001, -3))
+            Bullets.Add(New Bullet(New Point(Character.Location.X + 45, Character.Location.Y + 35), 10, 1, Math.PI, 0, -3))
+        End If
+        If BoolShift And BoolZ Then
+            Enemies.Add(New Enemy(New Point(50, 50), 50, traj, 30, 0, New Bullet(New Point(Character.Location.X + 45, Character.Location.Y + 35), 10, 0.1, -Math.PI, 0.001, -3), 0))
         End If
     End Sub
 End Class
