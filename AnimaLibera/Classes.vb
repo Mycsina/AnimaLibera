@@ -5,11 +5,8 @@
     Private VelAngle As Double
     Protected Accel As Single
     Protected AccelAngle As Double
+    Public CurrentPos As Point
     Private ReadOnly ElapsedTime As Stopwatch
-    Private X_Distance
-    Private Y_Distance
-    Private TimeElapsed As ULong
-    Public CurrentPos
     Public Sub New(ByVal StartingPos As Point, ByVal Damage As Single, ByVal Velocity As Single, ByVal Vel_Angle As Double, ByVal Accel As Single, ByVal Accel_Angle As Double)
         Me.StartingPos = StartingPos
         Me.Damage = Damage
@@ -20,7 +17,10 @@
         ElapsedTime = Stopwatch.StartNew()
     End Sub
     Public Function Position()
-        TimeElapsed = ElapsedTime.ElapsedMilliseconds()
+        Dim X_Distance As Integer
+        Dim Y_Distance As Integer
+        Dim TimeElapsed As Single
+        TimeElapsed = ElapsedTime.Elapsed.TotalMilliseconds
         X_Distance = (Velocity * Math.Sin(VelAngle) * TimeElapsed) + 1 / 2 * Accel * Math.Sin(AccelAngle) * TimeElapsed ^ 2
         Y_Distance = (Velocity * Math.Cos(VelAngle) * TimeElapsed) + 1 / 2 * Accel * Math.Cos(AccelAngle) * TimeElapsed ^ 2
         CurrentPos = New Point(StartingPos.X + X_Distance, StartingPos.Y + Y_Distance)
@@ -37,10 +37,6 @@ Public Class Enemy
     Protected Bullet As Bullet
     Protected ShootingCD As Single
     Private ReadOnly ElapsedTime As Stopwatch
-    Protected CurrentPos As Point
-    Private TimeInterval As ULong
-    Private X_Distance
-    Private Y_Distance
     Public Sub New(ByVal StartingPos As Point, ByVal Health As Single, ByVal Trajectory As List(Of Point), ByVal TimeOfTravel As Single, ByVal TimeBeforeEntry As Single, ByVal Bullet As Bullet, ByVal ShootingCD As Single)
         Me.Health = Health
         Me.StartingPos = StartingPos
@@ -54,22 +50,41 @@ Public Class Enemy
         ElapsedTime = Stopwatch.StartNew()
     End Sub
     Public Function Position()
-        TimeInterval = ElapsedTime.ElapsedMilliseconds()
+        Dim TimeInterval As Single
         Dim TimePerVector = TimeOfTravel * 1000 / VectorList.Count()
+        Dim DisposableList = New List(Of Point)
+        Dim X_Distance As Integer
+        Dim Y_Distance As Integer
+        Dim CurrentPos As Point
+        Dim LastPos As Point
+        TimeInterval = ElapsedTime.Elapsed.TotalMilliseconds
         If TimeBeforeEntry < TimeInterval Then
             For i = 0 To VectorList.Count - 1
-                VectorList(i).Time(TimePerVector, i)
+                If i = 0 Then
+                    DisposableList.Add(New Point(StartingPos.X + VectorList(0).Equation.X, StartingPos.Y + VectorList(0).Equation.Y))
+                Else
+                    DisposableList.Add(New Point(DisposableList.Last.X + VectorList(i).Equation.X, DisposableList.Last.Y + VectorList(i).Equation.Y))
+                End If
             Next
-            For Each Vector In VectorList
-                If Vector.EffectiveTime(0) < TimeInterval And Vector.EffectiveTime(1) > TimeInterval Then
-                    Debug.WriteLine(Vector.VectorToVel(TimeInterval))
-                    Debug.WriteLine(Math.Sin(Vector.Angle))
-                    X_Distance = (Vector.VectorToVel(TimeInterval) * Math.Sin(Vector.Angle) * TimeInterval)
-                    Y_Distance = (Vector.VectorToVel(TimeInterval) * Math.Cos(Vector.Angle) * TimeInterval)
-                    CurrentPos = New Point(StartingPos.X + X_Distance, StartingPos.Y + Y_Distance)
+            For i = 0 To VectorList.Count - 1
+                VectorList(i).Time(TimePerVector, i)
+                If i = 0 Then
+                    If VectorList(i).EffectiveTime(0) <= TimeInterval AndAlso VectorList(i).EffectiveTime(1) >= TimeInterval Then
+                        X_Distance = VectorList(i).Equation.X * TimeInterval / TimePerVector
+                        Y_Distance = VectorList(i).Equation.Y * TimeInterval / TimePerVector
+                        CurrentPos = New Point(StartingPos.X + X_Distance, StartingPos.Y + Y_Distance)
+                        Return CurrentPos
+                    End If
+                ElseIf VectorList(i).EffectiveTime(0) <= TimeInterval AndAlso VectorList(i).EffectiveTime(1) >= TimeInterval Then
+                    Try
+                        LastPos = DisposableList((TimeInterval \ TimePerVector) - 1)
+                    Catch
+                        LastPos = DisposableList(((TimeInterval + 10) \ TimePerVector) - 1)
+                    End Try
+                    X_Distance = VectorList(i).Equation.X * (TimeInterval - TimePerVector * i) / TimePerVector
+                    Y_Distance = VectorList(i).Equation.Y * (TimeInterval - TimePerVector * i) / TimePerVector
+                    CurrentPos = New Point(LastPos.X + X_Distance, LastPos.Y + Y_Distance)
                     Return CurrentPos
-                ElseIf Vector.EffectiveTime(1) < TimeInterval Then
-                    Return True
                 End If
             Next
         Else
@@ -85,9 +100,6 @@ Public Class Vector
         Equation = New Point(Point2.X - Point1.X, Point2.Y - Point1.Y)
         Angle = Math.Atan(Equation.Y / Equation.X)
     End Sub
-    Public Function VectorToVel(ByVal TimeElapsed)
-        Return (Math.Sqrt(Equation.X ^ 2 + Equation.Y ^ 2)) / TimeElapsed
-    End Function
     Public Sub Time(ByVal TimePerVector As Single, ByVal VectorNumber As UInteger)
         EffectiveTime = New ArrayList From {
             {TimePerVector * VectorNumber},

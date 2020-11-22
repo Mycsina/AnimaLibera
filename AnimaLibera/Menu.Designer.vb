@@ -22,38 +22,32 @@ Partial Class Menu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu))
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Start = New System.Windows.Forms.PictureBox()
+        Me.Options = New System.Windows.Forms.PictureBox()
+        CType(Me.Start, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Options, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Timer1
+        'Start
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 10000
+        Me.Start.BackColor = System.Drawing.Color.Transparent
+        Me.Start.Image = CType(resources.GetObject("Start.Image"), System.Drawing.Image)
+        Me.Start.Location = New System.Drawing.Point(114, 503)
+        Me.Start.Name = "Start"
+        Me.Start.Size = New System.Drawing.Size(100, 50)
+        Me.Start.TabIndex = 1
+        Me.Start.TabStop = False
         '
-        'PictureBox1
+        'Options
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(87, 422)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Location = New System.Drawing.Point(87, 539)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.Options.BackColor = System.Drawing.Color.Transparent
+        Me.Options.Image = Global.AnimaLibera.My.Resources.Resources.HighResBackground
+        Me.Options.Location = New System.Drawing.Point(936, 503)
+        Me.Options.Name = "Options"
+        Me.Options.Size = New System.Drawing.Size(100, 50)
+        Me.Options.TabIndex = 2
+        Me.Options.TabStop = False
         '
         'Menu
         '
@@ -63,20 +57,19 @@ Partial Class Menu
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Options)
+        Me.Controls.Add(Me.Start)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Helvetica", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Start, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Options, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Start As PictureBox
+    Friend WithEvents Options As PictureBox
 End Class
