@@ -53,6 +53,66 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Fullscreen() As Boolean
+            Get
+                Return CType(Me("Fullscreen"),Boolean)
+            End Get
+            Set
+                Me("Fullscreen") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property SoundEffects() As Boolean
+            Get
+                Return CType(Me("SoundEffects"),Boolean)
+            End Get
+            Set
+                Me("SoundEffects") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Music() As Boolean
+            Get
+                Return CType(Me("Music"),Boolean)
+            End Get
+            Set
+                Me("Music") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("500")>  _
+        Public Property MusicVol() As Integer
+            Get
+                Return CType(Me("MusicVol"),Integer)
+            End Get
+            Set
+                Me("MusicVol") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("100")>  _
+        Public Property SoundFXVol() As Integer
+            Get
+                Return CType(Me("SoundFXVol"),Integer)
+            End Get
+            Set
+                Me("SoundFXVol") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

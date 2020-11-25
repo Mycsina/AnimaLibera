@@ -88,11 +88,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes.vb" />
-    <Compile Include="Menu.vb">
+    <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.vb">
-      <DependentUpon>Menu.vb</DependentUpon>
+    <Compile Include="MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Game.Designer.vb">
@@ -101,6 +101,7 @@
     <Compile Include="Game.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,10 +124,11 @@
     <Compile Include="Options.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.vb</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.vb</DependentUpon>
@@ -142,6 +144,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -173,6 +176,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Better background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PoFV_Main_Menu_Theme_Kaeidzuka_~_Higan_Retour.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attack.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Options menu .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\torii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jpg options menu .jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

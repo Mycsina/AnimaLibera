@@ -16,10 +16,14 @@
     Protected BulletsDummy = New List(Of Bullet)
     Protected Enemies = New List(Of Enemy)
     Protected EnemiesDummy = New List(Of Enemy)
-    Protected Character = New Rectangle(560, 420, 60, 90)
+    Protected Character = New Rectangle(560, 420, 50, 90)
     Protected BulletSize = New Size(20, 20)
     Protected EnemySize = New Size(20, 20)
-    Protected Overloads Overrides Sub OnPaint(ByVal e As PaintEventArgs)
+    Protected Background As Image = HighPerfImage(My.Resources.LowResBackground)
+    Protected CharImage As Image = HighPerfImage(My.Resources.RegularTaiga)
+    Protected BulletImage As Image = HighPerfImage(My.Resources.Flower)
+    Protected EnemyImage As Image = HighPerfImage(My.Resources.RegularTaiga)
+    Protected Overloads Overrides Sub OnPaint(e As PaintEventArgs)
         Dim Backbuffer = New Rectangle(0, 0, Width, Height)
         Dim g As Graphics = e.Graphics
         g.CompositingMode = Drawing2D.CompositingMode.SourceOver
@@ -28,10 +32,6 @@
         g.SmoothingMode = Drawing2D.SmoothingMode.None
         g.TextRenderingHint = Drawing.Text.TextRenderingHint.SystemDefault
         g.PixelOffsetMode = Drawing2D.PixelOffsetMode.Half
-        Dim Background As Image = My.Resources.LowResBackground
-        Dim CharImage As Image = My.Resources.RegularTaiga
-        Dim BulletImage As Image = My.Resources.Flower
-        Dim EnemyImage As Image = My.Resources.RegularTaiga
         g.DrawImage(Background, Backbuffer)
         g.DrawImage(CharImage, Character)
         If Enemies IsNot Nothing Then
@@ -47,7 +47,11 @@
             Next
         End If
     End Sub
-    Sub Form2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    Sub Form2_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Close()
+            MainMenu.Show()
+        End If
         If e.KeyCode = Keys.Up Or e.KeyCode = Keys.W Then
             BoolUp = True
         End If
@@ -67,7 +71,7 @@
             BoolZ = True
         End If
     End Sub
-    Sub Form2_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
+    Sub Form2_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
         If e.KeyCode = Keys.Up Or e.KeyCode = Keys.W Then
             BoolUp = False
         End If
@@ -89,6 +93,10 @@
     End Sub
     Protected Sub RunningTime_Tick(sender As Object, e As EventArgs) Handles RunningTime.Tick
         Dim CharacterInvalidate = New Rectangle(Character.X, Character.Y, Character.Size.Width + 8, Character.Size.Height + 8)
+        Dim EnemyResult
+        Dim BulletResult
+        Dim vector
+        Dim test
         If Not Character.IntersectsWith(New Rectangle(0, 0, Width, 0)) Then
             If BoolUp Then
                 If BoolShift Then
@@ -135,10 +143,14 @@
         End If
         If Enemies IsNot Nothing Then
             For Each Enemy In Enemies
-                If TypeName(Enemy.Position()) = "Point" Then
-                    'Debug.WriteLine(Enemy.Position())
-                    Enemy.Position()
-                    Invalidate(New Rectangle(Enemy.Position(), EnemySize + New Size(30, 30)))
+                EnemyResult = Enemy.Position()
+                If TypeName(EnemyResult) = "Point" Then
+                    Invalidate(New Rectangle(EnemyResult, EnemySize + New Size(30, 30)))
+                    If Enemy.Cooldown(Enemy.ShootingCD) = False Then
+                        vector = Enemy.Aiming(New Point(Character.X, Character.Y))
+                        test = Enemy.Shooting(vector)
+                        Bullets.Add(test)
+                    End If
                 Else
                     EnemiesDummy.Add(Enemy)
                 End If
@@ -146,24 +158,25 @@
             If EnemiesDummy IsNot Nothing Then
                 For Each Enemy In EnemiesDummy
                     Enemies.Remove(Enemy)
-                    Invalidate(New Rectangle(Enemy.Position(), EnemySize + New Size(30, 30)))
+                    Invalidate(New Rectangle(EnemyResult, EnemySize + New Size(30, 30)))
                 Next
                 EnemiesDummy = New List(Of Enemy)
             End If
+
         End If
         If Bullets IsNot Nothing Then
             For Each Bullet In Bullets
-                Bullet.Position()
+                BulletResult = Bullet.Position()
                 If Bullet.CurrentPos.Y < -5 OrElse Bullet.CurrentPos.Y > Size.Height OrElse Bullet.CurrentPos.X > Size.Width OrElse Bullet.CurrentPos.X < -5 Then
                     BulletsDummy.Add(Bullet)
                 Else
-                    Invalidate(New Rectangle(Bullet.Position(), BulletSize + New Size(30, 30)))
+                    Invalidate(New Rectangle(BulletResult, BulletSize + New Size(50, 50)))
                 End If
             Next
             If BulletsDummy IsNot Nothing Then
                 For Each Bullet In BulletsDummy
                     Bullets.Remove(Bullet)
-                    Invalidate(New Rectangle(Bullet.Position(), BulletSize + New Size(30, 30)))
+                    Invalidate(New Rectangle(New Point(0, 0), New Size(Width, 30)))
                 Next
                 BulletsDummy = New List(Of Bullet)
             End If
@@ -172,11 +185,11 @@
     Protected Sub Shooting(sender As Object, e As EventArgs) Handles ShootingCD.Tick
         Dim inputs = {New Point(50, 50), New Point(450, 450), New Point(100, 100)}
         Dim traj = New List(Of Point)(inputs)
-        If BoolZ Then
-            Bullets.Add(New Bullet(New Point(Character.Location.X + 45, Character.Location.Y + 35), 10, 0.5, Math.PI, 0, -3))
+        If BoolZ And Not BoolShift Then
+            Bullets.Add(New Bullet(New Point(Character.Location.X + 45, Character.Location.Y + 35), 10, 500, Math.PI, 0, -3))
         End If
         If BoolShift And BoolZ Then
-            Enemies.Add(New Enemy(New Point(50, 50), 50, traj, 10, 0, New Bullet(New Point(Character.Location.X + 45, Character.Location.Y + 35), 10, 0.1, -Math.PI, 0.001, -3), 0))
+            Enemies.Add(New Parrot(New Point(50, 50), traj, 10, 0))
         End If
     End Sub
 End Class
