@@ -2,13 +2,13 @@
     Public AppPath As String = Application.StartupPath
     Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
         Hide()
-        Game.Show()
+        CharacterPicker.Show()
     End Sub
     Private Sub Options_Click(sender As Object, e As EventArgs) Handles OptionsPB.Click
         Hide()
         Options.Show()
     End Sub
-    Private Sub ExitPB_Click(sender As Object, e As EventArgs) Handles ExitPB.Click
+    Public Sub ExitPB_Click(sender As Object, e As EventArgs) Handles ExitPB.Click
         IO.Directory.Delete(AppPath & "/temp/", True)
         Application.Exit()
     End Sub
@@ -16,10 +16,10 @@
         SaveResourceObject("Theme", "theme.mp3", AppPath & "/temp/")
         SaveResourceObject("attack", "attack.mp3", AppPath & "/temp/")
         Dim attack = AppPath & "/temp/attack.mp3"
-        mciSendString("Open " & CStr(attack) & " alias Attack")
+        mciSendString("Open " & attack & " alias Attack")
         Dim theme = AppPath & "/temp/theme.mp3"
-        mciSendString("Open " & CStr(theme) & " alias Theme")
-        mciSendString("setaudio Theme volume to " & CStr(My.Settings.MusicVol))
+        mciSendString("Open " & theme & " alias Theme")
+        mciSendString("setaudio Theme volume to " & My.Settings.MusicVol)
         If My.Settings.Music Then
             mciSendString("play Theme repeat")
         End If

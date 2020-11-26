@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Options
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,20 +20,20 @@ Partial Class Options
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MusicDown = New System.Windows.Forms.PictureBox()
         Me.MusicUp = New System.Windows.Forms.PictureBox()
         Me.SoundFXUp = New System.Windows.Forms.PictureBox()
         Me.SoundFXDown = New System.Windows.Forms.PictureBox()
         Me.Test = New System.Windows.Forms.PictureBox()
-        Me.Back = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.MusicDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MusicUp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SoundFXUp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SoundFXDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Test, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Back, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MusicDown
@@ -82,13 +82,16 @@ Partial Class Options
         Me.Test.TabIndex = 4
         Me.Test.TabStop = False
         '
-        'Back
+        'PictureBox1
         '
-        Me.Back.Location = New System.Drawing.Point(1168, 12)
-        Me.Back.Name = "Back"
-        Me.Back.Size = New System.Drawing.Size(100, 50)
-        Me.Back.TabIndex = 5
-        Me.Back.TabStop = False
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.AnimaLibera.My.Resources.Resources.Back_button
+        Me.PictureBox1.Location = New System.Drawing.Point(1168, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 53)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
         '
         'Options
         '
@@ -98,7 +101,7 @@ Partial Class Options
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Back)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Test)
         Me.Controls.Add(Me.SoundFXDown)
         Me.Controls.Add(Me.SoundFXUp)
@@ -115,7 +118,7 @@ Partial Class Options
         CType(Me.SoundFXUp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SoundFXDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Test, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Back, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -125,5 +128,5 @@ Partial Class Options
     Friend WithEvents SoundFXUp As PictureBox
     Friend WithEvents SoundFXDown As PictureBox
     Friend WithEvents Test As PictureBox
-    Friend WithEvents Back As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

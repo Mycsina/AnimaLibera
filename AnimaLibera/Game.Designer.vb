@@ -25,6 +25,9 @@ Partial Class Game
         Me.components = New System.ComponentModel.Container()
         Me.RunningTime = New System.Windows.Forms.Timer(Me.components)
         Me.ShootingCD = New System.Windows.Forms.Timer(Me.components)
+        Me.GraphicsAC = New System.Windows.Forms.Timer(Me.components)
+        Me.BombLingerTime = New System.Windows.Forms.Timer(Me.components)
+        Me.LevelSelection = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'RunningTime
@@ -35,6 +38,18 @@ Partial Class Game
         'ShootingCD
         '
         Me.ShootingCD.Enabled = True
+        '
+        'GraphicsAC
+        '
+        Me.GraphicsAC.Enabled = True
+        '
+        'BombLingerTime
+        '
+        Me.BombLingerTime.Interval = 3000
+        '
+        'LevelSelection
+        '
+        Me.LevelSelection.Enabled = True
         '
         'Game
         '
@@ -56,4 +71,7 @@ Partial Class Game
 
     Friend WithEvents RunningTime As Timer
     Friend WithEvents ShootingCD As Timer
+    Friend WithEvents GraphicsAC As Timer
+    Friend WithEvents BombLingerTime As Timer
+    Friend WithEvents LevelSelection As Timer
 End Class
