@@ -59,6 +59,7 @@ Public Class Enemy
         Dim LastPos As Point
         TimeInterval = ElapsedTime.Elapsed.TotalMilliseconds
         If TimeBeforeEntry < TimeInterval Then
+            TimeInterval -= TimeBeforeEntry
             For i = 0 To VectorList.Count - 1
                 If i = 0 Then
                     DisposableList.Add(New Point(StartingPos.X + VectorList(0).Equation.X, StartingPos.Y + VectorList(0).Equation.Y))
@@ -85,10 +86,10 @@ Public Class Enemy
                     Y_Distance = VectorList(i).Equation.Y * (TimeInterval - TimePerVector * i) / TimePerVector
                     CurrentPos = New Point(LastPos.X + X_Distance, LastPos.Y + Y_Distance)
                     Return CurrentPos
-                Else
-                    Return Nothing
                 End If
             Next
+        Else
+            Return New Point(1280, 720)
         End If
     End Function
     Public Function Aiming(Target As Point)

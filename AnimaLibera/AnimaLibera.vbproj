@@ -181,6 +181,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Logopixies.ttf" />
     <None Include="Resources\lower Better background.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -266,6 +267,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Bubble.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameBackground.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu with help .jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

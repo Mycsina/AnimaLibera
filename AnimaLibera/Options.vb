@@ -19,8 +19,14 @@
         mciSendString("seek Attack to start")
         mciSendString("play Attack")
     End Sub
-    Private Sub Back_Click(sender As Object, e As EventArgs) 
+    Private Sub Back_Click(sender As Object, e As EventArgs) Handles BackPB.Click
         Close()
         MainMenu.Show()
+    End Sub
+    Private Sub Options_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Close()
+            MainMenu.Show()
+        End If
     End Sub
 End Class

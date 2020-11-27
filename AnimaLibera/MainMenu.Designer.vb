@@ -85,7 +85,7 @@ Partial Class MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.Menu
+        Me.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.Menu_with_help_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False

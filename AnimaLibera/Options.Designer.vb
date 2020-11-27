@@ -27,13 +27,13 @@ Partial Class Options
         Me.SoundFXUp = New System.Windows.Forms.PictureBox()
         Me.SoundFXDown = New System.Windows.Forms.PictureBox()
         Me.Test = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BackPB = New System.Windows.Forms.PictureBox()
         CType(Me.MusicDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MusicUp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SoundFXUp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SoundFXDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Test, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BackPB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MusicDown
@@ -82,16 +82,16 @@ Partial Class Options
         Me.Test.TabIndex = 4
         Me.Test.TabStop = False
         '
-        'PictureBox1
+        'BackPB
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.AnimaLibera.My.Resources.Resources.Back_button
-        Me.PictureBox1.Location = New System.Drawing.Point(1168, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 53)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
+        Me.BackPB.BackColor = System.Drawing.Color.Transparent
+        Me.BackPB.Image = Global.AnimaLibera.My.Resources.Resources.Back_button
+        Me.BackPB.Location = New System.Drawing.Point(1168, 12)
+        Me.BackPB.Name = "BackPB"
+        Me.BackPB.Size = New System.Drawing.Size(100, 53)
+        Me.BackPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BackPB.TabIndex = 5
+        Me.BackPB.TabStop = False
         '
         'Options
         '
@@ -101,7 +101,7 @@ Partial Class Options
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.BackPB)
         Me.Controls.Add(Me.Test)
         Me.Controls.Add(Me.SoundFXDown)
         Me.Controls.Add(Me.SoundFXUp)
@@ -118,7 +118,7 @@ Partial Class Options
         CType(Me.SoundFXUp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SoundFXDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Test, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BackPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -128,5 +128,5 @@ Partial Class Options
     Friend WithEvents SoundFXUp As PictureBox
     Friend WithEvents SoundFXDown As PictureBox
     Friend WithEvents Test As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BackPB As PictureBox
 End Class

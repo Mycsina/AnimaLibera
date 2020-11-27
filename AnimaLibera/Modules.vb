@@ -32,4 +32,51 @@
         g.Dispose()
         Return bmp
     End Function
+    Public Function Level1()
+        Dim Enemies As List(Of Enemy)
+        Enemies = New List(Of Enemy) From {
+            {New Parrot(New Point(50, 298), New List(Of Point) From {
+            {New Point(113, 298)},
+            {New Point(176, 250)},
+            {New Point(239, 203)},
+            {New Point(302, 108)},
+            {New Point(365, 60)}},
+            5, 5)},
+            {New Parrot(New Point(910, 298), New List(Of Point) From {
+            {New Point(869, 298)},
+            {New Point(806, 250)},
+            {New Point(743, 203)},
+            {New Point(680, 108)},
+            {New Point(617, 60)}},
+            5, 5)},
+            {New Turtle(New Point(178, 108), New List(Of Point) From {
+            {New Point(178, 108)},
+            {New Point(178, 108)}},
+            10, 10)},
+            {New Turtle(New Point(302, 155), New List(Of Point) From {
+            {New Point(302, 155)},
+            {New Point(302, 155)}},
+            10, 10)},
+            {New Turtle(New Point(428, 108), New List(Of Point) From {
+            {New Point(428, 108)},
+            {New Point(428, 108)}},
+            10, 10)},
+            {New Turtle(New Point(554, 155), New List(Of Point) From {
+            {New Point(554, 155)},
+            {New Point(554, 155)}},
+            10, 10)},
+            {New Turtle(New Point(680, 108), New List(Of Point) From {
+            {New Point(680, 108)},
+            {New Point(680, 108)}},
+            10, 10)},
+            {New Turtle(New Point(806, 155), New List(Of Point) From {
+            {New Point(806, 155)},
+            {New Point(806, 155)}},
+            10, 10)},
+            {New Polvinho(New Point(113, 108), New List(Of Point) From {
+            {New Point(113, 108)},
+            {New Point(113, 108)}},
+            10, 15)}}
+        Return Enemies
+    End Function
 End Module

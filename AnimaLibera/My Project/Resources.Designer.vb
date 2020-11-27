@@ -153,6 +153,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property GameBackground() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GameBackground", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Goth_taiga() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Goth_taiga", resourceCulture)
@@ -166,6 +176,16 @@ Namespace My.Resources
         Friend ReadOnly Property Green_taiga() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Green_taiga", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Help() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Help", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -187,6 +207,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Jpg options menu ", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Logopixies() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Logopixies", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
@@ -216,6 +246,16 @@ Namespace My.Resources
         Friend ReadOnly Property Menu() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Menu", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Menu_with_help_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Menu with help ", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

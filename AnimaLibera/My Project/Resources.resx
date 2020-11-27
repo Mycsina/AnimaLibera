@@ -121,8 +121,17 @@
   <data name="Jpg options menu " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jpg options menu .jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Back button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Back button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bubble" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bubble.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Blue_taiga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blue taiga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Egg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EGG.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Green_taiga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Green taiga .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,6 +142,9 @@
   <data name="Turtle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Turtle .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GameBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GameBackground.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Polvinho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_0370.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +154,14 @@
   <data name="Flower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flower.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fire.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LowResBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lower Better background.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logopixies" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logopixies.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoFV_Main_Menu_Theme_Kaeidzuka_~_Higan_Retour.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -160,6 +178,9 @@
   <data name="Dragoon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dragon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="torii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\torii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HighResBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Better background.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,19 +193,10 @@
   <data name="attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\attack.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Back button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Back button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Menu with help " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu with help .jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bubble" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bubble.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Egg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EGG.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fire.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="torii" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\torii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

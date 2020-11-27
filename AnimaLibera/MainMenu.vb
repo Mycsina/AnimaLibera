@@ -1,5 +1,11 @@
 ﻿Public Class MainMenu
     Public AppPath As String = Application.StartupPath
+    Protected HelpToggle As Boolean = False
+    Protected Overloads Overrides Sub OnPaint(e As PaintEventArgs)
+        If HelpToggle Then
+            e.Graphics.DrawImage(My.Resources.Help, New Rectangle(New Point(300, 0), New Size(500, 500)))
+        End If
+    End Sub
     Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
         Hide()
         CharacterPicker.Show()
@@ -38,7 +44,16 @@
     End Sub
     Private Sub MainMenu_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Escape Then
-            Close()
+            If HelpToggle Then
+                HelpToggle = False
+                Invalidate()
+            Else
+                Close()
+            End If
+        End If
+        If e.KeyValue = 219 Then
+            HelpToggle = True
+            Invalidate()
         End If
     End Sub
 End Class
