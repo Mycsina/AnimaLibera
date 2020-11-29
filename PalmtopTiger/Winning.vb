@@ -19,6 +19,8 @@
         mciSendString("close Level1")
         mciSendString("close Level2")
         mciSendString("close LevelR")
-        mciSendString("play Theme repeat")
+        If My.Settings.Music Then
+            mciSendString("play Theme repeat")
+        End If
     End Sub
 End Class
