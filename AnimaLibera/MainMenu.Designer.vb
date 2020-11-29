@@ -22,6 +22,7 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.Start = New System.Windows.Forms.PictureBox()
         Me.OptionsPB = New System.Windows.Forms.PictureBox()
         Me.Music = New System.Windows.Forms.PictureBox()
@@ -85,7 +86,7 @@ Partial Class MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.Menu_with_help_
+        Me.BackgroundImage = Global.PalmtopTiger.My.Resources.Resources.Menu_with_help_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
@@ -97,10 +98,11 @@ Partial Class MainMenu
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Helvetica", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(My.Resources.Winner_taiga, System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "MainMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Menu"
+        Me.Text = "Palmtop Tiger"
         CType(Me.Start, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OptionsPB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Music, System.ComponentModel.ISupportInitialize).EndInit()

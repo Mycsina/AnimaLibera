@@ -56,13 +56,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property Fullscreen() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("0.5")>  _
+        Public Property DifficultyMultiplier() As Single
             Get
-                Return CType(Me("Fullscreen"),Boolean)
+                Return CType(Me("DifficultyMultiplier"),Single)
             End Get
             Set
-                Me("Fullscreen") = value
+                Me("DifficultyMultiplier") = value
             End Set
         End Property
         
@@ -113,6 +113,18 @@ Namespace My
                 Me("SoundFXVol") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property Highscore() As Integer
+            Get
+                Return CType(Me("Highscore"),Integer)
+            End Get
+            Set
+                Me("Highscore") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
@@ -124,9 +136,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.AnimaLibera.My.MySettings
+        Friend ReadOnly Property Settings() As Global.PalmtopTiger.My.MySettings
             Get
-                Return Global.AnimaLibera.My.MySettings.Default
+                Return Global.PalmtopTiger.My.MySettings.Default
             End Get
         End Property
     End Module

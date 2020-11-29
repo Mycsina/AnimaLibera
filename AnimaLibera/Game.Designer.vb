@@ -28,6 +28,7 @@ Partial Class Game
         Me.GraphicsAC = New System.Windows.Forms.Timer(Me.components)
         Me.BombLingerTime = New System.Windows.Forms.Timer(Me.components)
         Me.LevelSelection = New System.Windows.Forms.Timer(Me.components)
+        Me.LevelRTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'RunningTime
@@ -51,6 +52,10 @@ Partial Class Game
         '
         Me.LevelSelection.Enabled = True
         '
+        'LevelRTimer
+        '
+        Me.LevelRTimer.Interval = 5000
+        '
         'Game
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -60,10 +65,11 @@ Partial Class Game
         Me.ControlBox = False
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = Global.PalmtopTiger.My.Resources.Resources.Winner_taiga
         Me.KeyPreview = True
         Me.Name = "Game"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Game"
+        Me.Text = "Palmtop Tiger"
         Me.ResumeLayout(False)
 
     End Sub
@@ -73,4 +79,5 @@ Partial Class Game
     Friend WithEvents GraphicsAC As Timer
     Friend WithEvents BombLingerTime As Timer
     Friend WithEvents LevelSelection As Timer
+    Friend WithEvents LevelRTimer As Timer
 End Class

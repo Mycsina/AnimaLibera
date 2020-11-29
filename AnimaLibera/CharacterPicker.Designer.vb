@@ -83,7 +83,7 @@ Partial Class CharacterPicker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.CharacterPicker
+        Me.BackgroundImage = Global.PalmtopTiger.My.Resources.Resources.CharacterPicker
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
@@ -95,10 +95,11 @@ Partial Class CharacterPicker
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Helvetica", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(My.Resources.Winner_taiga, System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "CharacterPicker"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CharacterPicker"
+        Me.Text = "Palmtop Tiger"
         CType(Me.ExitPB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ElfTaigaPB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RegularTaigaPB, System.ComponentModel.ISupportInitialize).EndInit()

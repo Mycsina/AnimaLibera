@@ -26,13 +26,11 @@ Partial Class Options
         Me.MusicUp = New System.Windows.Forms.PictureBox()
         Me.SoundFXUp = New System.Windows.Forms.PictureBox()
         Me.SoundFXDown = New System.Windows.Forms.PictureBox()
-        Me.Test = New System.Windows.Forms.PictureBox()
         Me.BackPB = New System.Windows.Forms.PictureBox()
         CType(Me.MusicDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MusicUp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SoundFXUp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SoundFXDown, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Test, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BackPB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,20 +70,10 @@ Partial Class Options
         Me.SoundFXDown.TabIndex = 3
         Me.SoundFXDown.TabStop = False
         '
-        'Test
-        '
-        Me.Test.BackColor = System.Drawing.Color.Transparent
-        Me.Test.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.Flower
-        Me.Test.Location = New System.Drawing.Point(793, 409)
-        Me.Test.Name = "Test"
-        Me.Test.Size = New System.Drawing.Size(100, 50)
-        Me.Test.TabIndex = 4
-        Me.Test.TabStop = False
-        '
         'BackPB
         '
         Me.BackPB.BackColor = System.Drawing.Color.Transparent
-        Me.BackPB.Image = Global.AnimaLibera.My.Resources.Resources.Back_button
+        Me.BackPB.Image = Global.PalmtopTiger.My.Resources.Resources.Back_button
         Me.BackPB.Location = New System.Drawing.Point(1168, 12)
         Me.BackPB.Name = "BackPB"
         Me.BackPB.Size = New System.Drawing.Size(100, 53)
@@ -97,36 +85,34 @@ Partial Class Options
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.Jpg_options_menu_
+        Me.BackgroundImage = Global.PalmtopTiger.My.Resources.Resources.Jpg_options_menu_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
         Me.Controls.Add(Me.BackPB)
-        Me.Controls.Add(Me.Test)
         Me.Controls.Add(Me.SoundFXDown)
         Me.Controls.Add(Me.SoundFXUp)
         Me.Controls.Add(Me.MusicUp)
         Me.Controls.Add(Me.MusicDown)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Helvetica", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = Global.PalmtopTiger.My.Resources.Resources.Winner_taiga
         Me.Name = "Options"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Options"
+        Me.Text = "Palmtop Tiger"
         CType(Me.MusicDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MusicUp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SoundFXUp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SoundFXDown, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Test, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BackPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
     Friend WithEvents MusicDown As PictureBox
     Friend WithEvents MusicUp As PictureBox
     Friend WithEvents SoundFXUp As PictureBox
     Friend WithEvents SoundFXDown As PictureBox
-    Friend WithEvents Test As PictureBox
     Friend WithEvents BackPB As PictureBox
 End Class

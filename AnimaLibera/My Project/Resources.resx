@@ -160,12 +160,6 @@
   <data name="LowResBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lower Better background.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logopixies" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logopixies.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PoFV_Main_Menu_Theme_Kaeidzuka_~_Higan_Retour.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="CharacterPicker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CharacterPicker.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,9 +175,6 @@
   <data name="torii" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\torii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HighResBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Better background.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Tiger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Angy tiger transparent .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,5 +189,38 @@
   </data>
   <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Droplet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Droplet .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Level1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PoFV - Aya Shameimaru's Theme - Wind God Girl.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Winner_taiga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\winner taiga.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Waves" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Waves.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Winner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Winner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Level2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PoFV - Reisen Udongein Inaba's Theme - Lunatic Eyes Invisible Full Moon.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RandomLevel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PoFV - Shikieiki Yamaxanadu's Theme - Touhou Judgement in the Sixtieth Year Fate of Sixty Years.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PoFV Title Screen - Kaeidzuka Higan Retour.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Pink_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pink star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="White_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\White star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boo_boo_torii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Boo boo portal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

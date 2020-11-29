@@ -50,7 +50,7 @@ Partial Class GameOver
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.AnimaLibera.My.Resources.Resources.Loser
+        Me.BackgroundImage = Global.PalmtopTiger.My.Resources.Resources.Loser
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.ControlBox = False
@@ -59,9 +59,10 @@ Partial Class GameOver
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Helvetica", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(My.Resources.Winner_taiga, System.Drawing.Icon)
         Me.Name = "GameOver"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "GameOver"
+        Me.Text = "Palmtop Tiger"
         CType(Me.MenuPB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ExitPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
