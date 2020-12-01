@@ -300,6 +300,7 @@
     <None Include="Resources\Pink star.png" />
     <None Include="Resources\White star.png" />
     <None Include="Resources\Boo boo portal.png" />
+    <None Include="Resources\Even better options menu .jpg" />
     <Content Include="Winner taiga.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

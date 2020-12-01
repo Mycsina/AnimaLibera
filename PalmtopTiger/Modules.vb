@@ -233,10 +233,10 @@
         Return Enemies
     End Function
     Public Function LevelR(Modifier)
-        Dim ChaoticPoint1 = New Point(CInt(Math.Floor(806 * Rnd())) + 60, CInt(Math.Floor(250 * Rnd())) + 108)
-        Dim ChaoticPoint2 = New Point(CInt(Math.Floor(806 * Rnd())) + 60, CInt(Math.Floor(250 * Rnd())) + 108)
-        Dim ChaoticPoint3 = New Point(CInt(Math.Floor(806 * Rnd())) + 60, CInt(Math.Floor(250 * Rnd())) + 108)
-        Dim ChaoticPoint4 = New Point(CInt(Math.Floor(806 * Rnd())) + 60, CInt(Math.Floor(250 * Rnd())) + 108)
+        Dim ChaoticPoint1 = New Point(CInt(Math.Floor(750 * Rnd())) + 120, CInt(Math.Floor(250 * Rnd())) + 108)
+        Dim ChaoticPoint2 = New Point(CInt(Math.Floor(750 * Rnd())) + 120, CInt(Math.Floor(250 * Rnd())) + 108)
+        Dim ChaoticPoint3 = New Point(CInt(Math.Floor(750 * Rnd())) + 120, CInt(Math.Floor(250 * Rnd())) + 108)
+        Dim ChaoticPoint4 = New Point(CInt(Math.Floor(750 * Rnd())) + 120, CInt(Math.Floor(250 * Rnd())) + 108)
         Dim ChaoticPointOList = New List(Of Point) From {{ChaoticPoint1}, {ChaoticPoint2}, {ChaoticPoint3}, {ChaoticPoint4}}
         Dim ChaoticTime = CInt(Math.Floor(20 * Rnd())) + 5
         Randomize()
@@ -244,11 +244,11 @@
             Case 1
                 Return New Parrot(ChaoticPointOList(0), ChaoticPointOList, ChaoticTime, 0, Modifier)
             Case 2
-                Return New Turtle(ChaoticPointOList(1), ChaoticPointOList, ChaoticTime, 0, Modifier)
+                Return New Turtle(ChaoticPointOList(0), ChaoticPointOList, ChaoticTime, 0, Modifier)
             Case 3
-                Return New Polvinho(ChaoticPointOList(2), ChaoticPointOList, ChaoticTime, 0, Modifier)
+                Return New Polvinho(ChaoticPointOList(0), ChaoticPointOList, ChaoticTime, 0, Modifier)
             Case 4
-                Return New Dragoon(ChaoticPointOList(3), ChaoticPointOList, ChaoticTime, 0, Modifier)
+                Return New Dragoon(ChaoticPointOList(0), ChaoticPointOList, ChaoticTime, 0, Modifier)
             Case 5
                 Return New Tiger(ChaoticPointOList(0), ChaoticPointOList, ChaoticTime, 0, Modifier)
         End Select

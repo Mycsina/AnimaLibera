@@ -59,11 +59,11 @@
     End Property
     Protected Overloads Overrides Sub OnPaint(e As PaintEventArgs)
         Dim Backbuffer = New Rectangle(0, 0, Width, Height)
-        Dim FramerateFont As Font = New Font("Helvetica", 12, FontStyle.Regular, GraphicsUnit.Pixel)
+        Dim FramerateFont As Font = New Font("Bauhaus 93", 12, FontStyle.Regular, GraphicsUnit.Pixel)
         Dim ScoreboardFont As Font = New Font("Bauhaus 93", 30, FontStyle.Regular, GraphicsUnit.Pixel)
         Dim myPen As New Pen(Color.White, 3)
         Dim g As Graphics = e.Graphics
-        Score = CInt((GrazeCount \ 8) * ((Lives + Bombs) / 2) + KillCount * 100)
+        Score = CInt(((GrazeCount \ 8) * ((Lives + Bombs) / 2) + KillCount * 100 + CurrentTime.ElapsedMilliseconds / 100) * My.Settings.DifficultyMultiplier)
         g.CompositingMode = Drawing2D.CompositingMode.SourceOver
         g.InterpolationMode = Drawing2D.InterpolationMode.NearestNeighbor
         g.CompositingQuality = Drawing2D.CompositingQuality.HighSpeed
@@ -84,7 +84,7 @@
         g.DrawImage(CharImage, Character)
         g.DrawImage(BulletImage, Hitbox)
         AdvanceFrameRate()
-        g.DrawString(CurrentFrameRate & " FPS", FramerateFont, Brushes.Black, 0, 0)
+        g.DrawString(CurrentFrameRate & " FPS", FramerateFont, Brushes.HotPink, 0, 0)
         g.DrawString(Score, ScoreboardFont, Brushes.HotPink, 975, 125)
         g.DrawString(GrazeCount \ 4, ScoreboardFont, Brushes.HotPink, 1085, 393)
         g.DrawString(My.Settings.Highscore, ScoreboardFont, Brushes.HotPink, 960, 225)
@@ -147,6 +147,10 @@
         If UsedBomb IsNot Nothing Then
             g.DrawEllipse(myPen, UsedBomb.StartingPos.X - UsedBomb.Radius, UsedBomb.StartingPos.Y - UsedBomb.Radius, UsedBomb.Radius * 2, UsedBomb.Radius * 2)
         End If
+    End Sub
+
+    Private Sub Game_Load(sender As Object, e As EventArgs) Handles Me.Load
+        CurrentTime.Reset()
     End Sub
 
     Private Sub AdvanceFrameRate()
@@ -371,8 +375,8 @@
         End If
         If ChoosingCount = 1 Then
             OpacityTickCount = -1
-            CurrentTime.Stop()
             LevelSelection.Dispose()
+            CurrentTime.Start()
             Enemies = Level1(My.Settings.DifficultyMultiplier)
             If My.Settings.Music Then
                 mciSendString("Open " & Theme1 & " alias Level1")
@@ -382,8 +386,8 @@
             End If
         ElseIf ChoosingCount = -1 Then
             OpacityTickCount = -1
-            CurrentTime.Stop()
             LevelSelection.Dispose()
+            CurrentTime.Start()
             Enemies = Level2(My.Settings.DifficultyMultiplier)
             If My.Settings.Music Then
                 mciSendString("Open " & Theme2 & " alias Level2")
@@ -395,6 +399,7 @@
             OpacityTickCount = -1
             LevelSelection.Dispose()
             LevelRTimer.Enabled = True
+            CurrentTime.Start()
             Enemies = New List(Of Enemy)
             If My.Settings.Music Then
                 mciSendString("Open " & ThemeR & " alias LevelR")
@@ -406,6 +411,6 @@
     End Sub
 
     Private Sub LevelRTimer_Tick(sender As Object, e As EventArgs) Handles LevelRTimer.Tick
-        Enemies.Add(LevelR((CurrentTime.ElapsedMilliseconds / (3 * 60 * 1000)) * My.Settings.DifficultyMultiplier))
+        Enemies.Add(LevelR((CurrentTime.ElapsedMilliseconds / (3 * 60 * 5000)) * My.Settings.DifficultyMultiplier))
     End Sub
 End Class

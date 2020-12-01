@@ -153,6 +153,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Even_better_options_menu_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Even better options menu ", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Fire() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Fire", resourceCulture)
@@ -211,16 +221,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Jpg_options_menu_() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Jpg options menu ", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized resource of type System.Byte[].
         '''</summary>
         Friend ReadOnly Property Level1() As Byte()
@@ -256,16 +256,6 @@ Namespace My.Resources
         Friend ReadOnly Property LowResBackground() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("LowResBackground", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Menu() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Menu", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

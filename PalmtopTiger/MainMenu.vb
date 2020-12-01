@@ -18,6 +18,7 @@
     End Sub
     Public Sub ExitPB_Click(sender As Object, e As EventArgs) Handles ExitPB.Click
         IO.Directory.Delete(AppPath & "/temp/", True)
+        My.Settings.Save()
         Application.Exit()
     End Sub
     Public Sub Menu_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -58,14 +59,14 @@
         If e.KeyCode = Keys.Escape Then
             If HelpToggle Then
                 HelpToggle = False
-                Invalidate()
+                Invalidate(New Rectangle(New Point(300, 0), New Size(500, 500)))
             Else
-                Close()
+                ExitPB_Click(sender, e)
             End If
         End If
         If e.KeyValue = 219 Then
             HelpToggle = True
-            Invalidate()
+            Invalidate(New Rectangle(New Point(300, 0), New Size(500, 500)))
         End If
     End Sub
 End Class

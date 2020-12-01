@@ -244,7 +244,7 @@ Public Class Tiger
         Dim ChaoticInt
         Randomize(Health)
         ChaoticInt = 1.5 * Rnd() + 1
-        Return New Bullet(CurrentPos, Velocity, Aiming.Angle, ChaoticInt * 10, ChaoticInt, Caller:=TypeName(Me))
+        Return New Bullet(CurrentPos + New Point(30, 30), Velocity, Aiming.Angle, ChaoticInt * 10, ChaoticInt, Caller:=TypeName(Me))
     End Function
 End Class
 
