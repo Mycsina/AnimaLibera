@@ -3,7 +3,7 @@
     Protected HelpToggle As Boolean = False
     Protected Overloads Overrides Sub OnPaint(e As PaintEventArgs)
         If HelpToggle Then
-            e.Graphics.DrawImage(My.Resources.Help, New Rectangle(New Point(300, 0), New Size(500, 500)))
+            e.Graphics.DrawImage(HighPerfImage(My.Resources.Help), New Rectangle(New Point(0, 0), New Size(1280, 720)))
         End If
     End Sub
     Private Sub Start_Click(sender As Object, e As EventArgs) Handles Start.Click
@@ -59,14 +59,14 @@
         If e.KeyCode = Keys.Escape Then
             If HelpToggle Then
                 HelpToggle = False
-                Invalidate(New Rectangle(New Point(300, 0), New Size(500, 500)))
+                Invalidate(New Rectangle(New Point(0, 0), New Size(1280, 720)))
             Else
                 ExitPB_Click(sender, e)
             End If
         End If
         If e.KeyValue = 219 Then
             HelpToggle = True
-            Invalidate(New Rectangle(New Point(300, 0), New Size(500, 500)))
+            Invalidate(New Rectangle(New Point(0, 0), New Size(1280, 720)))
         End If
     End Sub
 End Class

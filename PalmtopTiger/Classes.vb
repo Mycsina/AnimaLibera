@@ -162,6 +162,7 @@ Public Class Parrot
         Return New Bullet(CurrentPos, Velocity, Aiming.Angle, Accel, AccelAngle, Caller:=TypeName(Me))
     End Function
 End Class
+
 Public Class Dragoon
     Inherits Enemy
     Protected Accel
@@ -259,7 +260,7 @@ Public Class Bomb
         Me.Radius = Radius
     End Sub
 
-    Public Function IsInRange(Bullet)
+    Public Function IsInRange(Bullet As Bullet)
         Distance = Math.Sqrt(Math.Abs(Bullet.CurrentPos.X - StartingPos.X) ^ 2 + Math.Abs(Bullet.CurrentPos.Y - StartingPos.Y) ^ 2)
         If Distance <= Radius Then
             Return True
