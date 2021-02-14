@@ -6,4 +6,4 @@ Shamelessly uses the incredible music from Phantasmagoria of Flower View, full c
 
 If you have any suggestions/better ways to make stuff work, please do say so.
 
-Aaaaand if you use the art/code, crediting me would be really appreciated.
+If you do use the art/code, crediting me would be really appreciated.
